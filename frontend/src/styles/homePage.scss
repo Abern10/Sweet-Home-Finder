@@ -1,0 +1,88 @@
+// src/styles/homePage.scss
+
+@import 'global.scss';
+
+// Variables
+$hero-text-color: white;
+
+// Mixin for Flexbox Centering
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Base styles for the homepage
+.home-page {
+  font-family: 'Poppins', sans-serif;
+  cursor: url('../assets/cursor.png'), auto;
+  background-color: $primary-color;
+
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      z-index: 0; 
+      filter: brightness(0.55); 
+    }
+
+    .hero-text {
+      position: relative;
+      margin: 100px;
+      z-index: 1;
+      color: $hero-text-color;
+      text-align: center;
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+
+      .cta-button {
+        background-color: $cta-bg-color;
+        color: white;
+        padding: 15px 40px;
+        margin: 25px;
+        border: none;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+          background-color: $cta-hover-color;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+  .hero-text {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      padding: 12px 30px;
+    }
+  }
+}

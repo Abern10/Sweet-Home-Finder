@@ -1,0 +1,195 @@
+// src/styles/navBar.scss
+
+@import 'global.scss';
+
+$link-color: white;
+$button-bg-color: $cta-hover-color;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  background-color: $primary-color;
+  padding: 20px;
+  position: relative;
+
+  .navbar-container {
+    @include flex-center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .navbar-logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .menu-btn {
+    display: none; 
+    cursor: pointer;
+    position: relative;
+    z-index: 9999;
+
+    .btn-line {
+      width: 30px;
+      height: 3px;
+      margin: 5px 0;
+      background-color: $link-color;
+      transition: all 0.5s ease-out;
+    }
+
+    &.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    &.close .btn-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    li {
+      a {
+        color: $link-color;
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 5px;
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          left: 0;
+          bottom: 0;
+          background-color: $link-color;
+          transition: width 0.3s ease-in-out;
+        }
+
+        &:hover:after {
+          width: 100%;
+        }
+      }
+
+      .custom-signin-btn {
+        background-color: $button-bg-color;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  // Mobile styles
+  @media (max-width: 768px) {
+    .navbar-container {
+      justify-content: space-between;
+    }
+
+    .menu-btn {
+      cursor: pointer;
+      display: block !important;
+    }
+
+    .navbar-links {
+      position: absolute;
+      top: 76%;
+      left: 0;
+      width: 100%;
+      background-color: $primary-color;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      z-index: 10;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      opacity: 0;
+
+      li {
+        padding: 10px 0;
+        text-align: center;
+
+        a {
+          font-size: 1.2rem;
+        }
+      }
+
+      .custom-signin-btn {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+        font-size: 1.2rem;
+      }
+    }
+
+    .navbar-links.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .navbar-links.hide {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+}
+
+// .search-button {
+//   display: flex;
+//   align-items: center;
+//   background: transparent; /* Match the background with the navbar */
+//   border: none;
+//   color: white; /* Match link color */
+//   padding: 0;
+//   font-size: 16px; /* Match link font size */
+//   cursor: pointer;
+// }
+
+// .search-input {
+//   background: transparent;
+//   border: none;
+//   color: white; /* Same as other links */
+//   font-size: 16px;
+//   outline: none;
+//   padding-left: 8px;
+//   width: 0;
+//   transition: width 0.3s ease;
+//   opacity: 0;
+// }
+
+// .search-button:hover .search-input {
+//   width: 100px; /* Expand width on hover */
+//   opacity: 1;
+//   border-bottom: 1px solid white; /* Optional underline */
+// }
+
+// .search-icon {
+//   color: white; /* Match with link color */
+//   font-size: 16px;
+//   margin-left: 5px;
+// }
+

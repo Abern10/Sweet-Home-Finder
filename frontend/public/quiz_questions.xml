@@ -1,0 +1,46 @@
+<quiz>
+    <category name="Essential Questions">
+        <question>
+            <text>What type of pet are you most interested in?</text>
+            <options>
+                <option tag="dog">Dog</option>
+                <option tag="cat">Cat</option>
+                <option tag="no_preference">No preference</option>
+            </options>
+        </question>
+        <question>
+            <text>What size of pet would you prefer?</text>
+            <options>
+                <option tag="small">Small (e.g., Chihuahua, Persian Cat)</option>
+                <option tag="medium">Medium (e.g., Beagle, Maine Coon)</option>
+                <option tag="large">Large (e.g., Golden Retriever, Ragdoll Cat)</option>
+                <option tag="no_size_preference">No preference</option>
+            </options>
+        </question>
+        <question>
+            <text>How active are you?</text>
+            <options>
+                <option tag="high_energy">I'm very active and would like a pet to match</option>
+                <option tag="moderate_energy">I prefer moderate activity, like walks or occasional play</option>
+                <option tag="low_energy">I'm laid-back and want a calm, low-energy pet</option>
+            </options>
+        </question>
+        <question>
+            <text>Do you live in a house or apartment?</text>
+            <options>
+                <option tag="house_with_yard">House with a yard</option>
+                <option tag="apartment_friendly">Apartment</option>
+                <option tag="no_living_preference">No preference</option>
+            </options>
+        </question>
+        <question>
+            <text>What age range of pet are you most interested in?</text>
+            <options>
+                <option tag="puppy_kitten">Puppy/Kitten</option>
+                <option tag="adult_pet">Adult</option>
+                <option tag="senior_pet">Senior</option>
+                <option tag="no_age_preference">No preference</option>
+            </options>
+        </question>
+    </category>
+</quiz>

@@ -1,0 +1,65 @@
+// src/styles/footer.scss
+
+@import 'global.scss';
+
+// Variables
+$footer-text-color: white;
+$footer-link-color: white;
+$footer-link-hover-color: rgba(255, 255, 255, 0.7);
+
+// Mixin for Flexbox Centering
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Footer Styles
+.footer {
+  background-color: $primary-color;
+  color: $footer-text-color;
+  padding: 20px 0;
+  text-align: center;
+
+  .footer-content {
+    @include flex-center;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: flex;
+      gap: 20px;
+
+      li {
+        a {
+          color: $footer-link-color;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $footer-link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile Styles
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
